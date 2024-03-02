@@ -1,0 +1,12 @@
+name: dsci_310_14
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyter
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+  - seaborn
+prefix: D:\miniconda\envs\dsci_310_14
