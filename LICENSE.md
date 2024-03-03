@@ -12,4 +12,6 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 ### Creative Commons 4.0 License
 
+For the report in this repository: 
+
 [DSCI 310 Project Report](https://github.com/cadenmchan/dsci310_project) © 2024 by [Caden Chan](https://github.com/cadenmchan), [Neha Menon](https://github.com/nehamenon704), [Peter Cheng](https://github.com/petercmh01) & [Tak Sripratak](https://github.com/tak4563) is licensed under CC BY 4.0 
