@@ -18,8 +18,6 @@ The first time running this code, input the command below into the terminal insi
 To re-run our analysis, open JupyterLab using the following command: 
 * jupyter lab 
 
-Open renewable_energy_analysis.ipynb in Jupyter Lab and Switch Kernel to "project14". Then under the "Kernel" tab, select "Restart Kernel and Run All Cells".
-
 
 # License
 
