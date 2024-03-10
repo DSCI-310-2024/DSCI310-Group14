@@ -1,13 +1,28 @@
 import click
+from io import BytesIO
+import urllib.request as urllib2
+import pandas as pd
 
 @click.command()
-@click.option('--count', default=1, help='Number of greetings.')
-@click.option('--name', prompt='Your name',
-              help='The person to greet.')
-def hello(count, name):
-    """Simple program that greets NAME for a total of COUNT times."""
-    for x in range(count):
-        click.echo(f"Hello {name}!")
+@click.option('--URL', default="https://databank.worldbank.org/data/download/WDI_CSV.zip", help='URL of file you want to read in')
+@click.option('--data_file',default="WDIData.csv", prompt='What file in this ZIP would you like?',
+              help='Which file in the ZIP file the data you want is in')
+
+def reading_data(URL, data_file):
+    """Simple program that reads in the data from a URL."""
+    data_url= urllib2.urlopen(URL).read()
+    file = ZipFile(BytesIO(URL))
+    data_csv = file.open(data_file)
+    data = pd.read_csv(data_csv)
+    data.head()
+
 
 if __name__ == '__main__':
-    hello()
+    reading_data()
+
+
+# URL = urllib2.urlopen("https://databank.worldbank.org/data/download/WDI_CSV.zip").read()
+# file = ZipFile(BytesIO(URL))
+# data_csv = file.open("WDIData.csv")
+# data = pd.read_csv(data_csv)
+# data.head()
