@@ -1,21 +1,33 @@
 import click
 from io import BytesIO
-import urllib.request as urllib2
+# import urllib.request as urllib2
 import pandas as pd
+import os
+from zipfile import ZipFile
+from urllib.request import urlopen
+
+
 
 @click.command()
-@click.option('--URL', default="https://databank.worldbank.org/data/download/WDI_CSV.zip", help='URL of file you want to read in')
+@click.option('--url', default="https://databank.worldbank.org/data/download/WDI_CSV.zip", help='URL of file you want to read in')
 @click.option('--data_file',default="WDIData.csv", prompt='What file in this ZIP would you like?',
               help='Which file in the ZIP file the data you want is in')
+@click.option('--write',prompt='What file in this ZIP would you like?',
+              help='Which file in the ZIP file the data you want is in')
 
-def reading_data(URL, data_file):
+def reading_data(url, data_file, write):
     """Simple program that reads in the data from a URL."""
-    data_url= urllib2.urlopen(URL).read()
-    file = ZipFile(BytesIO(URL))
+    data_url= urlopen(url)
+    file = ZipFile(BytesIO(data_url.read()))
     data_csv = file.open(data_file)
     data = pd.read_csv(data_csv)
-    data.head()
+    data.to_csv(write)
+    
+    if not os.path.exists(write):
+        os.makedirs(write)
 
+    # Specify a complete file path for saving the CSV file
+    data.to_csv(write)
 
 if __name__ == '__main__':
     reading_data()
