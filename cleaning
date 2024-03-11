@@ -1,0 +1,39 @@
+import click
+from io import BytesIO
+# import urllib.request as urllib2
+import pandas as pd
+import os
+from zipfile import ZipFile
+from urllib.request import urlopen
+from sklearn.model_selection import train_test_split
+
+
+
+@click.command()
+@click.option('--dataread', prompt="fds")
+@click.option('--dataout', prompt='What file in this ZIP would you like?')
+
+def reading_data(dataread,dataout):
+    data1=pd.pivot_table(dataread, index= 'Country Name', values='2015', columns='Indicator Name')
+    data1= data1[['Access to electricity (% of population)', 'Adjusted net national income (constant 2015 US$)', 
+             'CO2 emissions (kt)', 'Death rate, crude (per 1,000 people)',
+              'Land area (sq. km)', 'PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)',
+                'Population, total','Renewable energy consumption (% of total final energy consumption)',
+             'Renewable electricity output (% of total electricity output)']]
+    data1=data1.fillna(0)
+    energy_train, energy_test= train_test_split(data1, train_size=0.75)
+    energy_test.to_csv(os.path.join(dataout, "energy_test.csv"), index=False)
+    energy_train.to_csv(os.path.join(dataout, "energy_train.csv"), index=False)
+
+
+# data1.columns
+
+# data1= data1[['Access to electricity (% of population)', 'Adjusted net national income (constant 2015 US$)', 
+#              'CO2 emissions (kt)', 'Death rate, crude (per 1,000 people)',
+#               'Land area (sq. km)', 'PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)',
+#                 'Population, total','Renewable energy consumption (% of total final energy consumption)',
+#              'Renewable electricity output (% of total electricity output)']]
+
+# energy_train, energy_test= train_test_split(data1, train_size=0.75)
+# data1=data1.fillna(0)
+# data1.info()
