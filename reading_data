@@ -9,32 +9,20 @@ from urllib.request import urlopen
 
 
 @click.command()
-@click.option('--url', default="https://databank.worldbank.org/data/download/WDI_CSV.zip", help='URL of file you want to read in')
-@click.option('--data_file',default="WDIData.csv", prompt='What file in this ZIP would you like?',
-              help='Which file in the ZIP file the data you want is in')
-@click.option('--write',prompt='What file in this ZIP would you like?',
-              help='Which file in the ZIP file the data you want is in')
+@click.option('--url',help='URL of file you want to read in')
+@click.option('--data_file',default="WDIData.csv", help='Which file in the ZIP file the data you want is in')
+@click.option('--data_path', help='Which directory would you like this file to be written to?')
+@click.option('--save_file_to', help='Which file would you like this file to be saved to?')
 
-def reading_data(url, data_file, write):
-    """Simple program that reads in the data from a URL."""
+def reading_data(url, data_file, data_path, save_file_to):
+    """Simple program that reads in the data from a URL, and selects a file from the .zip."""
     data_url= urlopen(url)
     file = ZipFile(BytesIO(data_url.read()))
     data_csv = file.open(data_file)
     data = pd.read_csv(data_csv)
-    data.to_csv(write)
-    
-    if not os.path.exists(write):
-        os.makedirs(write)
-
-    # Specify a complete file path for saving the CSV file
-    data.to_csv(write)
+    os.makedirs(data_path, exist_ok=True)  
+    data.to_csv(save_file_to)  
 
 if __name__ == '__main__':
     reading_data()
 
-
-# URL = urllib2.urlopen("https://databank.worldbank.org/data/download/WDI_CSV.zip").read()
-# file = ZipFile(BytesIO(URL))
-# data_csv = file.open("WDIData.csv")
-# data = pd.read_csv(data_csv)
-# data.head()
