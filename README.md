@@ -20,9 +20,9 @@ To re-run our analysis, open JupyterLab using the following command:
 
 ----(draft)----
 
-python eda.py --data_path=scripts/data/processesed/energy_train.csv --output_path=result/EDA.png
+python scripts/eda.py --data_path=data/processesed/energy_train.csv --output_path=result/EDA.png
 
-python linear_regression.py --training_data_path=scripts/data/processesed/energy_train.csv --test_data_path=data/processesed/energy_test.csv --output_path=result/result.png
+python scripts/linear_regression.py --training_data_path=data/processesed/energy_train.csv --test_data_path=data/processesed/energy_test.csv --output_path=result/result.png
 
 # License
 
