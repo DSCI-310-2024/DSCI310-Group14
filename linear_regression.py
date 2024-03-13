@@ -21,12 +21,14 @@ def main(training_data_path, test_data_path, output_path):
     energy_test = pd.read_csv(test_data_path)
 
     #splitting the x and y columns of the data
-    energy_train_x= energy_train.drop('Renewable electricity output (% of total electricity output)', axis=1)
-    energy_train_x= energy_train.drop('Country Name', axis=1)
+    energy_train_x= energy_train
+    energy_train_x = energy_train_x.drop('Renewable electricity output (% of total electricity output)', axis=1)
+    energy_train_x= energy_train_x.drop('Country Name', axis=1)
     energy_train_y= energy_train[["Renewable electricity output (% of total electricity output)"]]
 
-    energy_test_x= energy_test.drop('Renewable electricity output (% of total electricity output)', axis=1)
-    energy_test_x= energy_test.drop('Country Name', axis=1)
+    energy_test_x= energy_test
+    energy_test_x = energy_test_x.drop('Renewable electricity output (% of total electricity output)', axis=1)
+    energy_test_x= energy_test_x.drop('Country Name', axis=1)
     energy_test_y= energy_test[["Renewable electricity output (% of total electricity output)"]]
 
     #making the linear model
@@ -40,6 +42,7 @@ def main(training_data_path, test_data_path, output_path):
                                  figsize=(6,6), title=f"Predicted vs. Ground Truth Target Value (RMSE={energy_RMSE})",
                                 xlabel="Predicted Values", ylabel="True Values")
     """
+    
     y_true = energy_test_y['Renewable electricity output (% of total electricity output)']
     y_pred = lm.predict(energy_test_x)
     energy_RMSE = mean_squared_error(y_true=y_true,
