@@ -42,6 +42,7 @@ def main(training_data_path, test_data_path, output_path):
                                  figsize=(6,6), title=f"Predicted vs. Ground Truth Target Value (RMSE={energy_RMSE})",
                                 xlabel="Predicted Values", ylabel="True Values")
     """
+    
     y_true = energy_test_y['Renewable electricity output (% of total electricity output)']
     y_pred = lm.predict(energy_test_x)
     energy_RMSE = mean_squared_error(y_true=y_true,
