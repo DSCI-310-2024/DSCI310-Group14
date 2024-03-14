@@ -10,4 +10,5 @@ dependencies:
   - scikit-learn=1.4.1.post1
   - seaborn=0.13.2
   - conda-forge::altair
+  - click=8.1.7
 prefix: D:\miniconda\envs\dsci_310_14
