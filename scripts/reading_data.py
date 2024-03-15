@@ -21,7 +21,7 @@ def reading_data(url, data_file, data_path, file_name):
     data_csv = file.open(data_file)
     data = pd.read_csv(data_csv)
     os.makedirs(data_path, exist_ok=True)  
-    data.to_csv(file_name)  
+    data.to_csv(data_path+"/"+file_name)  
 
 if __name__ == '__main__':
     reading_data()

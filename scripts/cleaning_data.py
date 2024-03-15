@@ -27,8 +27,8 @@ def main(dataread,dataout,datafile1, datafile2, seed):
     data1=data1.fillna(0)
     energy_train, energy_test= train_test_split(data1, train_size=0.75)
     os.makedirs(dataout, exist_ok=True)  
-    energy_test.to_csv(dataout+datafile1)  
-    energy_train.to_csv(dataout+ datafile2)
+    energy_test.to_csv(dataout+"/"+datafile1)  
+    energy_train.to_csv(dataout+ "/"+datafile2)
 
 if __name__ == '__main__':
     main()
