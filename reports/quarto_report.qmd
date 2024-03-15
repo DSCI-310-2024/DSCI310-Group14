@@ -8,7 +8,7 @@ format:
     pdf:
         toc: true
         toc-depth: 2
-bibliography: references.bib
+bibliography: ../reports/references.bib
 execute:
     echo: false
     warning: false
@@ -31,17 +31,17 @@ from sklearn.metrics import mean_squared_error
 from IPython.display import Markdown, display
 ```
 
-## Summary
+# Summary
 
 As a complex issue, climate change doesn't have a singular cause, though the impacts of burning fossil fuels are significant sources of greenhouse gases and have caused detrimental effects. Our analysis here explores if a subset of renewable energy-related World Development Indicators and a simple linear regression model can be used to predict renewable electricity outputs of countries worldwide. Our analysis created a model with a Root Mean Squared Error (RMSE) score of 23.74. Our model could predict most cases accurately, though some predictions with low accuracy were far from the actual values. Our model predicted some countries would have a negative renewable electricity output, demonstrating the need for a more complex analysis using advanced machine learning methods. By creating an advanced machine learning model, the capabilities of countries to produce more renewable electricity based on their other World Development Indicators can be calculated and used to influence country-specific and global goals and targets.
 
-## Introduction
+# Introduction
 
-Over the past few decades, climate change has been thoroughly studied. Climate change most commonly refers to the influx of greenhouse gases (GHG) in our atmosphere, leading to warming temperatures and having a vast range of effects on humans, ecosystems and global health. (National Geographic, 2023) Renewable energy sources such as solar, wind, hydroelectric, and geothermal power are crucial for reducing global greenhouse gas emissions and combating climate change. (NRDC, 2022) However, the adoption of renewable energy technology and the output of renewable energy varies significantly across countries due to various factors such as geographical location, technological capabilities, economic conditions, and policy frameworks. (Munk School Staff, 2022) In this analysis, we observe if a linear regression model can be used to predict the renewable electricity output of different countries based on other World Development Indicators. As the effects of climate change become more apparent, attention will shift to renewable energy sources and how they can be used to power daily activities necessary to achieve a clean energy world. (Loztof, K., 2022) By conducting this analysis, we identify the factors that may indicate renewable electricity output. These results could be used to influence global policy and set country-specific goals on renewable electricity production that are tailored to country circumstances based on values for World Development Indicators. By understanding these factors better, federal and global policy may focus more on improving these factors, allowing shifts to renewable electricity to be achieved more easily.
+Over the past few decades, climate change has been thoroughly studied. Climate change most commonly refers to the influx of greenhouse gases (GHG) in our atmosphere, leading to warming temperatures and having a vast range of effects on humans, ecosystems and global health. (@ngeo) Renewable energy sources such as solar, wind, hydroelectric, and geothermal power are crucial for reducing global greenhouse gas emissions and combating climate change. (@nrdc) However, the adoption of renewable energy technology and the output of renewable energy varies significantly across countries due to various factors such as geographical location, technological capabilities, economic conditions, and policy frameworks. (@uoft) In this analysis, we observe if a linear regression model can be used to predict the renewable electricity output of different countries based on other World Development Indicators. As the effects of climate change become more apparent, attention will shift to renewable energy sources and how they can be used to power daily activities necessary to achieve a clean energy world. (@nhm) By conducting this analysis, we identify the factors that may indicate renewable electricity output. These results could be used to influence global policy and set country-specific goals on renewable electricity production that are tailored to country circumstances based on values for World Development Indicators. By understanding these factors better, federal and global policy may focus more on improving these factors, allowing shifts to renewable electricity to be achieved more easily.
 
-The dataset used in this project was sourced from the World Bank's World Development Indicators (WDI) database. (World Bank Group, 2023) The WDI is the primary World Bank collection of development indicators, compiled from officially recognized international sources. It presents the most current and accurate global development data and includes national, regional and global estimates. For the purpose of this project, the dataset was filtered to include indicators relevant to renewable energy.
+The dataset used in this project was sourced from the World Bank's World Development Indicators (WDI) database. (@worldbank) The WDI is the primary World Bank collection of development indicators, compiled from officially recognized international sources. It presents the most current and accurate global development data and includes national, regional and global estimates. For the purpose of this project, the dataset was filtered to include indicators relevant to renewable energy.
 
-## Methods and Results
+# Methods and Results
 
 **Step 1.** Data reading. In the first step, we read the data directly from the link to the zip file containing it and specify which file to use.
 
@@ -129,11 +129,11 @@ energy_RMSE_round = round(energy_RMSE, 2)
 
 ![(a-h from left to right on each row). After reading some of the literature, these variables were chosen, and exploratory data analysis was conducted to visualize their relationship with the target variable. Plots d), f), and g) show a weak, positive linear relationship, while plots b), c), e) and h) show no relationship, though they can still be used as predictor variables.](../results/figures/EDA.png){#eda width=70%}
 
-![ A graph showing the relationship between the actual values of renewable electricity output and the models generated predictions of the target variable. A weak positive relationship is observed, showing the model is able to predict some cases.](../results/figures/final_analysis.png){#vis_result width=90%}
+![ A graph showing the relationship between the actual values of renewable electricity output and the models generated predictions of the target variable. A weak positive relationship is observed, showing the model is able to predict some cases.](../results/figures/final_analysis.png){#fig-vis-result width=90%}
 
-## Discussion
+# Discussion
 
-To visualize the results of our analysis, the predicted values were plotted against the actual values in @vis_result. If our model were perfect, when observing the plot, we would observe all dots on a line with a 45-degree angle with a slope of 1, meaning that the predicted values would be equal to the actual values. However, the scatter of the points shows slight variation from this ideal, which is expected in real-world data. From a visual assessment, there appears to be a moderate clustering of points along the 45-degree angle, a relatively strong linear relation. The spread of points indicates variability in the accuracy of the predictions across different values of renewable electricity output.
+To visualize the results of our analysis, the predicted values were plotted against the actual values in @fig-vis-result. If our model were perfect, when observing the plot, we would observe all dots on a line with a 45-degree angle with a slope of 1, meaning that the predicted values would be equal to the actual values. However, the scatter of the points shows slight variation from this ideal, which is expected in real-world data. From a visual assessment, there appears to be a moderate clustering of points along the 45-degree angle, a relatively strong linear relation. The spread of points indicates variability in the accuracy of the predictions across different values of renewable electricity output.
 
 The root mean squared error (RMSE) was calculated to be `{python} energy_RMSE_round`. This metric measures the difference between each predicted and actual value, squares it, finds the mean and takes the square root. The interpretation of this value is `{python} energy_RMSE_round`% since our target variable was measured as the proportion of renewable energy produced (out of 100%). This indicates a modest fit, implying that while the model has some predictive ability, the model does not capture a significant portion of the outcome variability. In addition, it must be noted that the model predicts some values as negative, which shows that the model's limitation as a negative renewable electricity production is not possible. There is room for improvement by incorporating additional variables, employing more complex modelling techniques, or improving data quality. The findings, particularly the model score, suggest a moderate level of predictive power. This has been expected given the complexity of factors influencing renewable electricity outputs in different countries, including economic, geographical, technological, and policy factors, which might not be fully captured by the selected indicators alone.
 
@@ -148,4 +148,4 @@ The results from this analysis can lead to the following questions:
 - Impact of Non-traditional Factors: How do non-traditional factors, such as public opinion, international cooperation, and educational levels, impact renewable energy output? Exploring these could provide us with a more holistic understanding of the dynamics at play.
 
 
-## References
+# References
