@@ -52,15 +52,15 @@ The dataset used in this project was sourced from the World Bank's World Develop
 **Step 4.** Variable selection. After conducting a preliminary literature review and understanding some factors that may be related to renewable electricity production, the 8 variables below were chosen. Then, we explored the relationships between the 8 chosen variables and the target variable to see if there were pre-existing relationships that may be useful in our model.
 
 **The variables we are interested in are as follows from each country:**
-- `Access to electricity (% of population)` (numerical): The percentage of the population with access to electricity.
-- `Adjusted net national income (constant 2015 US$)` (numerical): The net national income in constant 2015 US dollars.
-- `CO2 emissions (kt)` (numerical): The total amount of CO2 emissions in kilotonnes.
-- `Death rate, crude (per 1,000 people)` (numerical): The crude death rate per 1,000 people.
-- `Land area (sq. km)` (numerical): The total land area in square kilometers.
-- `PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)` (numerical): The mean annual exposure to PM2.5 air pollution in micrograms per cubic meter.
-- `Population, total` (numerical): The total population.
-- `Renewable energy consumption (% of total final energy consumption)` (numerical): The percentage of renewable energy consumption out of the total final energy consumption.
-- `Renewable electricity output (% of total electricity output)` (numerical): The percentage of renewable electricity output out of the total electricity output.
+* `Access to electricity (% of population)` (numerical): The percentage of the population with access to electricity.
+* `Adjusted net national income (constant 2015 US$)` (numerical): The net national income in constant 2015 US dollars.
+* `CO2 emissions (kt)` (numerical): The total amount of CO2 emissions in kilotonnes.
+* `Death rate, crude (per 1,000 people)` (numerical): The crude death rate per 1,000 people.
+* `Land area (sq. km)` (numerical): The total land area in square kilometers.
+* `PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)` (numerical): The mean annual exposure to PM2.5 air pollution in micrograms per cubic meter.
+* `Population, total` (numerical): The total population.
+* `Renewable energy consumption (% of total final energy consumption)` (numerical): The percentage of renewable energy consumption out of the total final energy consumption.
+* `Renewable electricity output (% of total electricity output)` (numerical): The percentage of renewable electricity output out of the total electricity output.
 
 **Step 5.** Exploratory visualization. We visualized all the predictor variables vs the target variable. Once these variables were visualized, it was determined that all the chosen variables would be used in the regression analysis.
 
@@ -127,9 +127,9 @@ energy_RMSE = mean_squared_error(y_true=energy_test_y['Renewable electricity out
 energy_RMSE_round = round(energy_RMSE, 2)
 ```
 
-![(a-h from left to right on each row). After reading some of the literature, these variables were chosen, and exploratory data analysis was conducted to visualize their relationship with the target variable. Plots d), f), and g) show a weak, positive linear relationship, while plots b), c), e) and h) show no relationship, though they can still be used as predictor variables.](../results/EDA.png){#eda width=70%}
+![(a-h from left to right on each row). After reading some of the literature, these variables were chosen, and exploratory data analysis was conducted to visualize their relationship with the target variable. Plots d), f), and g) show a weak, positive linear relationship, while plots b), c), e) and h) show no relationship, though they can still be used as predictor variables.](../results/figures/EDA.png){#eda width=70%}
 
-![ A graph showing the relationship between the actual values of renewable electricity output and the models generated predictions of the target variable. A weak positive relationship is observed, showing the model is able to predict some cases.](../results/result.png){#vis_result width=90%}
+![ A graph showing the relationship between the actual values of renewable electricity output and the models generated predictions of the target variable. A weak positive relationship is observed, showing the model is able to predict some cases.](../results/figures/final_analysis.png){#vis_result width=90%}
 
 ## Discussion
 

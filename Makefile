@@ -1,4 +1,4 @@
-all: results/figures/final_analysis.png
+all: results/figures/EDA.png results/figures/final_analysis.png 
 
 #download data from the URL
 data/raw/downloaded.csv: scripts/reading_data.py
@@ -15,18 +15,19 @@ data/processed/energy_test.csv data/processed/energy_train.csv: data/raw/downloa
 	--dataout=data/processed \
 	--datafile1=energy_test.csv \
 	--datafile2=energy_train.csv \
-	--seed=123
+	--seed=123 \
 
 #eda 
 results/figures/EDA.png: data/processed/energy_train.csv scripts/eda.py
-	python scripts/eda.py --data_path=data/processed/energy_train.csv \
-	--output_path=results/figures/EDA.png
+	python scripts/eda.py \
+	--data_path=data/processed/energy_train.csv \
+	--output_path=results/figures/EDA.png \
 
 #linear regression analysis
-results/figures/final_analysis.png : data/processed/energy_test.csv data/processed/energy_train.csv scripts/linear_regression.py
+results/figures/final_analysis.png: data/processed/energy_test.csv data/processed/energy_train.csv scripts/linear_regression.py
 	python scripts/linear_regression.py --training_data_path=data/processed/energy_train.csv \
 	--test_data_path=data/processed/energy_test.csv \
-	--output_path=results/figures/final_analysis.png
+	--output_path=results/figures/final_analysis.png \
 
 clean:
 	rm -f data/raw/downloaded.csv
