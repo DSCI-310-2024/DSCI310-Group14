@@ -1,4 +1,7 @@
-all: results/figures/EDA.png results/figures/final_analysis.png 
+all: results/figures/EDA.png \
+		results/figures/final_analysis.png \
+		reports/renewable_energy_report.html \
+		reports/renewable_energy_report.pdf \
 
 #download data from the URL
 data/raw/downloaded.csv: scripts/reading_data.py
@@ -29,9 +32,18 @@ results/figures/final_analysis.png: data/processed/energy_test.csv data/processe
 	--test_data_path=data/processed/energy_test.csv \
 	--output_path=results/figures/final_analysis.png \
 
+#write the report
+reports/renewable_energy_report.html : results reports/quarto_report.qmd
+	quarto render reports/quarto_report.qmd --to html
+
+reports/renewable_energy_report.pdf : results reports/quarto_report.qmd
+	quarto render reports/quarto_report.qmd --to pdf
+
 clean:
 	rm -f data/raw/downloaded.csv
 	rm -f data/energy_test.csv
 	rm -f data/energy_train.csv
 	rm -f results/figures/EDA.png
 	rm -f results/figures/final_analysis.png
+	rm -f reports/renewable_energy_report.html
+	rm -f reports/renewable_energy_report.pdf
