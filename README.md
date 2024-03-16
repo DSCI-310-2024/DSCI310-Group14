@@ -12,17 +12,13 @@ The final report can be found in the repository.
 
 # Usage 
 
-The first time running this code, input the command below into the terminal inside the root of the repository. 
-* conda env create --file team-14_environment.yml 
+To set up the environment to reproduce the study results, build and run the container using either `Dockerfile` or the DockerHub image. All required packages and versions are specified in container image. 
 
-To re-run our analysis, open JupyterLab using the following command: 
-* jupyter lab 
-
-----(draft)----
-
-python scripts/eda.py --data_path=data/processesed/energy_train.csv --output_path=result/EDA.png
-
-python scripts/linear_regression.py --training_data_path=data/processesed/energy_train.csv --test_data_path=data/processesed/energy_test.csv --output_path=result/result.png
+Run the Makefile within the container environment by navigating to the `DSCI310-Group14` home directory and running:
+```
+make all
+```
+This should automatically read and tidy the data, perform analysis, and generate two reports, `renewable_energy_report.html` and `renewable_energy_report.pdf`, both of which can be found within the `reports` folder of the main directory.
 
 # License
 
