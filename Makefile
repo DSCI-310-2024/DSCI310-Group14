@@ -33,11 +33,11 @@ results/figures/final_analysis.png: data/processed/energy_test.csv data/processe
 	--output_path=results/figures/final_analysis.png \
 
 #write the report
-reports/renewable_energy_report.html : results reports/quarto_report.qmd
-	quarto render reports/quarto_report.qmd --to html
+reports/renewable_energy_report.html : results reports/renewable_energy_report.qmd
+	quarto render reports/renewable_energy_report.qmd --to html
 
-reports/renewable_energy_report.pdf : results reports/quarto_report.qmd
-	quarto render reports/quarto_report.qmd --to pdf
+reports/renewable_energy_report.pdf : results reports/renewable_energy_report.qmd
+	quarto render reports/renewable_energy_report.qmd --to pdf
 
 clean:
 	rm -f data/raw/downloaded.csv
