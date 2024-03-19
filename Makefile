@@ -41,8 +41,8 @@ reports/renewable_energy_report.pdf : results reports/renewable_energy_report.qm
 
 clean:
 	rm -f data/raw/downloaded.csv
-	rm -f data/energy_test.csv
-	rm -f data/energy_train.csv
+	rm -f data/processed/energy_test.csv
+	rm -f data/processed/energy_train.csv
 	rm -f results/figures/EDA.png
 	rm -f results/figures/final_analysis.png
 	rm -f reports/renewable_energy_report.html
