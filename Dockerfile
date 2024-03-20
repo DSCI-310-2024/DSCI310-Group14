@@ -9,7 +9,7 @@ RUN conda install scikit-learn=1.4.1.post1 -y
 RUN conda install seaborn=0.13.2 -y
 RUN conda install conda-forge::altair=5.2.0 -y
 RUN conda install click=8.1.7 -y
-#RUN conda install quarto=1.4.550 -y
+RUN conda install quarto=1.4.550 -y
 RUN conda install tabulate=0.9.0 -y
 
 RUN apt-get update 
