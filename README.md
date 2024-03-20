@@ -8,16 +8,35 @@ Data Source Link (From World Bank): https://datacatalog.worldbank.org/search/dat
 As a complex issue, climate change doesn't have a singular cause, though the impacts of burning fossil fuels is a large source of greenhouse gases, and has caused detrimental effects. Our analysis here attempts to explore **if a subset of renewable energy related World Development Indicators** along with a simple **linear regression model** can be used to **predict renewable electricity outputs** of countries throughout the world. Our analysis created a model with an Root Mean Squared Error (RMSE) score of 23.74. Our model was able to predict most cases accurately though there are some predictions with low accuracy, not close to the actual values. Our model did predict some countries to have a negative renewable electricity output which demonstrates the need for a more complex analysis to be conducted, using advanced machine learning methods. By creating an advanced machine learning model, the capabilities of countries to produce more renewable electricity based on their other World Development Indicators can be calculated and used to influence country specific and global goals and targets.
 
 # Report
-The final report can be found in the repository. 
+The final report can be found in the repositor after the analysis is run. 
 
 # Usage 
 
 To set up the environment to reproduce the study results, build and run the container using either `Dockerfile` or the DockerHub image. All required packages and versions are specified in container image. 
 
-Run the Makefile within the container environment by navigating to the `DSCI310-Group14` home directory and running:
+First, ensure docker has been installed and is running
+
+Then, clone the repository by putting the following command into your terminal: 
 ```
-make all
+git clone https://github.com/DSCI-310-2024/DSCI310-Group14.git
+
 ```
+
+Navigate into the project directory using terminal commands. 
+
+To run the analysis, first paste the following command into terminal:
+
+```
+docker-compose run --rm final-analysis-env make clean
+
+```
+Then the next command to run the analysis:
+
+```
+docker-compose run --rm final-analysis-env make all
+
+```
+
 This should automatically read and tidy the data, perform analysis, and generate two reports, `renewable_energy_report.html` and `renewable_energy_report.pdf`, both of which can be found within the `reports` folder of the main directory.
 
 # License
