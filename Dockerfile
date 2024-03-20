@@ -18,8 +18,6 @@ RUN apt-get install lmodern -y
 
 # RUN sudo -S \
 # apt-get update && apt-get install -y \
-# make \
-# gdebi
 
 # ARG QUARTO_VERSION="1.4.537"
 # RUN curl -o quarto-linux-arm64.deb -L https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-arm64.deb
