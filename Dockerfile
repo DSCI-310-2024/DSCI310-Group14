@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/r-notebook:2023-11-19
+FROM quay.io/jupyter/scipy-notebook:2024-02-24
 
 USER root
 
@@ -14,7 +14,17 @@ RUN conda install tabulate=0.9.0 -y
 
 RUN apt-get update 
 RUN apt-get install fonts-lmodern -y 
-RUN apt-get install lmodern -y
+RUN apt-get install lmodern -y 
+
+# RUN sudo -S \
+# apt-get update && apt-get install -y \
+# make \
+# gdebi
+
+# ARG QUARTO_VERSION="1.4.537"
+# RUN curl -o quarto-linux-arm64.deb -L https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-arm64.deb
+# RUN gdebi --non-interactive quarto-linux-arm64.deb
+
 
 
 
