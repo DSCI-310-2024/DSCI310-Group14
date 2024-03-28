@@ -23,7 +23,6 @@ def split_xy_columns(dataset):
 @click.option('--test_data_path', help='path of test set data (csv) to read', type=str)
 @click.option('--output_path', help='folder path to save the results, need to end with.png', type=str)
 
-
 def main(training_data_path, test_data_path, output_path):
     #read clean train and test dataset
 
@@ -43,12 +42,14 @@ def main(training_data_path, test_data_path, output_path):
     y_pred = lm.predict(energy_test_x)
     energy_RMSE = mean_squared_error(y_true=y_true,
                                      y_pred=y_pred)**(1/2)
+
+    fig = plt.figure()
     plt.scatter(x=y_pred, y=energy_test_y['Renewable electricity output (% of total electricity output)'])
     plt.title(f"Predicted vs. Ground Truth Target Value (RMSE={energy_RMSE})")
     plt.xlabel("Predicted Values")
     plt.ylabel("True Values")
     plt.savefig(output_path)
-    return energy_RMSE
+    return energy_RMSE, fig
     
 if __name__ == '__main__':
     main()
