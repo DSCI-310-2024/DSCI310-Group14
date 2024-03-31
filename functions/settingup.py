@@ -6,8 +6,8 @@ import zipfile
 file1= open("test1.csv", "w")
 file1.write("this is a test file")
 
-file1= open("WDIDATA.csv", "w")
-file1.write("DUMMY DATA")
+file2= open("targetfile.csv", "w")
+file2.write("DUMMY DATA")
 
 
 #make a empty zip file
@@ -15,8 +15,9 @@ with zipfile.ZipFile('emptyfile.zip', 'w', zipfile.ZIP_STORED) as zipf:
     pass
 
 with zipfile.ZipFile('dummydata.zip', 'w', zipfile.ZIP_STORED) as zipf:
-    zipf.write('test1.csv')
-    zipf.write('WDIDATA.csv')
+    # zipf.write('test1.csv')
+    zipf.write("targetfile.csv")
+    zipf.write("test1.csv")
 
 
 
