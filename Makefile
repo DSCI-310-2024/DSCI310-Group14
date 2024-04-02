@@ -28,7 +28,8 @@ results/figures/EDA.png: data/processed/energy_train.csv scripts/eda.py
 
 #linear regression analysis
 results/figures/final_analysis.png: data/processed/energy_test.csv data/processed/energy_train.csv scripts/linear_regression.py
-	python scripts/linear_regression.py --training_data_path=data/processed/energy_train.csv \
+	python scripts/linear_regression.py \
+ 	--training_data_path=data/processed/energy_train.csv \
 	--test_data_path=data/processed/energy_test.csv \
 	--output_path=results/figures/final_analysis.png \
 

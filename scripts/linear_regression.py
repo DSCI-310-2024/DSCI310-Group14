@@ -9,6 +9,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn import set_config
 from sklearn.metrics import mean_squared_error
 
+
 def split_xy_columns(dataset):
     #splitting the x and y columns of the data
     dataset_x = dataset
@@ -17,6 +18,11 @@ def split_xy_columns(dataset):
     dataset_y = dataset[["Renewable electricity output (% of total electricity output)"]]
 
     return dataset_x, dataset_y
+
+@click.command()
+@click.option('--training_data_path', help='path of training set data (csv) to read', type=str)
+@click.option('--test_data_path', help='path of test set data (csv) to read', type=str)
+@click.option('--output_path', help='folder path to save the results, need to end with.png', type=str)
 
 def plot_rmse(training_data_path, test_data_path, output_path):
     #read clean train and test dataset
@@ -45,3 +51,6 @@ def plot_rmse(training_data_path, test_data_path, output_path):
     plt.ylabel("True Values")
     plt.savefig(output_path)
     return energy_RMSE, fig
+
+if __name__ == '__main__':
+    plot_rmse()

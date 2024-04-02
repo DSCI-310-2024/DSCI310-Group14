@@ -91,7 +91,7 @@ The dataset utilized for this study was sourced from the World Bank's World Deve
 
 URL = urllib2.urlopen("https://databank.worldbank.org/data/download/WDI_CSV.zip").read()
 file = ZipFile(BytesIO(URL))
-data_csv = file.open("WDIData.csv")
+data_csv = file.open("WDICSV.csv")
 data = pd.read_csv(data_csv)
 Markdown(data.head().to_markdown(index = False))
 ```
