@@ -68,4 +68,15 @@ def test_na_imputed():
     
     assert energy_train.isnull().sum().sum() == 0
     assert energy_test.isnull().sum().sum() == 0
+
+
+def test_cleanup_temp_dir():
+    # Clean temp directory
+    os.remove("tests/temp/test_energy_test.csv")
+    os.remove("tests/temp/test_energy_train.csv")
+    os.rmdir('tests/temp')
+    path1 = pathlib.Path("tests/temp/test_energy_test.csv")
+    path2 = pathlib.Path("tests/temp/test_energy_train.csv")
+    path3 = pathlib.Path("tests/temp")
+    assert not os.path.exists(path1)and not os.path.exists(path2) and not os.path.exists(path3)
     

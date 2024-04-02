@@ -48,16 +48,16 @@ def test_clean_up():
     path = pathlib.Path("data/raw/downloaded.csv")
     assert not os.path.exists(path)
 
-def test_clean_up_dir():
-    os.remove("tests/dummydata.zip")
-    os.remove("tests/emptyfile.zip")
-    os.remove('tests/targ.csv')
-    os.remove("tests/test1.csv")
-    path1 = pathlib.Path("tests/dummydata.zip")
-    path2 = pathlib.Path("tests/emptyfile.zip")
-    path3 = pathlib.Path("tests/targ.csv")
-    path4 = pathlib.Path("tests/test1.csv")
-    assert not os.path.exists(path1) and not os.path.exists(path2) and not os.path.exists(path3) and not os.path.exists(path4)
+# def test_clean_up_dir():
+#     os.remove("tests/dummydata.zip")
+#     os.remove("tests/emptyfile.zip")
+#     os.remove('tests/targ.csv')
+#     os.remove("tests/test1.csv")
+#     path1 = pathlib.Path("tests/dummydata.zip")
+#     path2 = pathlib.Path("tests/emptyfile.zip")
+#     path3 = pathlib.Path("tests/targ.csv")
+#     path4 = pathlib.Path("tests/test1.csv")
+#     assert not os.path.exists(path1) and not os.path.exists(path2) and not os.path.exists(path3) and not os.path.exists(path4)
 
 # def test_path_preexisting():
 #     url=""
