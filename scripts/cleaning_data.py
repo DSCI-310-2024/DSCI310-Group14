@@ -5,8 +5,10 @@ import os
 from zipfile import ZipFile
 from urllib.request import urlopen
 from sklearn.model_selection import train_test_split
-import numpy
-
+import numpy as np
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from scripts.src.impute_split import impute_split
 
 @click.command()
 @click.option('--dataread', help='path to directory where data is located')
@@ -16,7 +18,7 @@ import numpy
 @click.option('--seed', default= 123,help='To ensure consistent values, what seed to set the analysis to')
 
 def main(dataread,dataout,datafile1, datafile2, seed):
-    numpy.random.seed(seed)
+    np.random.seed(seed)
     data1 = pd.read_csv(dataread)
     data1=data1.pivot_table(index= 'Country Name', values="2015", columns='Indicator Name')
     data1= data1[['Access to electricity (% of population)', 'Adjusted net national income (constant 2015 US$)', 
@@ -24,8 +26,7 @@ def main(dataread,dataout,datafile1, datafile2, seed):
               'Land area (sq. km)', 'PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)',
                 'Population, total','Renewable energy consumption (% of total final energy consumption)',
              'Renewable electricity output (% of total electricity output)']]
-    data1=data1.fillna(0)
-    energy_train, energy_test= train_test_split(data1, train_size=0.75)
+    energy_train, energy_test = impute_split(data1, 0, 0.75, seed)
     os.makedirs(dataout, exist_ok=True)  
     energy_test.to_csv(dataout+"/"+datafile1)  
     energy_train.to_csv(dataout+ "/"+datafile2)
