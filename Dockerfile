@@ -4,6 +4,7 @@ FROM quay.io/jupyter/minimal-notebook:x86_64-ubuntu-22.04
 
 USER root
 
+#code used from here https://www.r-bloggers.com/2022/07/how-to-set-up-quarto-with-docker-part-1-static-content/ to install quarto
 RUN apt-get update
 
 RUN apt-get install -y --no-install-recommends \
@@ -33,19 +34,6 @@ RUN apt-get install lmodern -y
 RUN curl -LO https://quarto.org/download/latest/quarto-linux-amd64.deb
 RUN gdebi --non-interactive quarto-linux-amd64.deb
 
-# USER ${NB_UID} 
-# ARG QUARTO_VERSION="1.4.550"
-# RUN curl -o quarto-linux-amd64.deb -L https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb
-# RUN gdebi --non-interactive quarto-linux-amd64.deb
-
-
-# # And to install gdebi:
-# USER root
-
-# RUN sudo -S \
-#     apt-get update && apt-get install -y \
-#     make \
-#     gdebi
 
 
 
