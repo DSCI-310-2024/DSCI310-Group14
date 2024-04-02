@@ -9,7 +9,7 @@ import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-from functions.functionread import reading_datain
+from scripts.src.functionread import reading_datain
 
 @click.command()
 @click.option('--url',help='URL of file you want to read in', type=str)
