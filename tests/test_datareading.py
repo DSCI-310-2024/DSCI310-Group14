@@ -3,7 +3,7 @@ import sys
 import pathlib
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from scripts.src.functionread import reading_datain
+from src.functionread import reading_datain
 import pytest
 
 
@@ -49,15 +49,15 @@ def test_clean_up():
     assert not os.path.exists(path)
 
 def test_clean_up_dir():
-    os.remove("dummydata.zip")
-    os.remove("emptyfile.zip")
-    os.remove('targ.csv')
-    os.remove("test1.csv")
-    path1 = pathlib.Path("dummydata.zip")
-    path2 = pathlib.Path("emptyfile.zip")
-    path3 = pathlib.Path("targ.csv")
-    path4 = pathlib.Path("test1.csv")
-    assert not os.path.exists(path1)and not os.path.exists(path2) and not os.path.exists(path3) and not os.path.exists(path4)
+    os.remove("tests/dummydata.zip")
+    os.remove("tests/emptyfile.zip")
+    os.remove('tests/targ.csv')
+    os.remove("tests/test1.csv")
+    path1 = pathlib.Path("tests/dummydata.zip")
+    path2 = pathlib.Path("tests/emptyfile.zip")
+    path3 = pathlib.Path("tests/targ.csv")
+    path4 = pathlib.Path("tests/test1.csv")
+    assert not os.path.exists(path1) and not os.path.exists(path2) and not os.path.exists(path3) and not os.path.exists(path4)
 
 # def test_path_preexisting():
 #     url=""
