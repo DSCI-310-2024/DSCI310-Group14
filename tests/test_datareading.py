@@ -7,13 +7,13 @@ from functions.functionread import reading_datain
 import pytest
 
 
-empty_zip="https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/functions/emptyfile.zip"
+empty_zip="https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/tests/emptyfile.zip"
 
-zip_with_files= "https://github.com/DSCI-310-2024/DSCI310-Group14/raw/testing1/functions/dummydata.zip"
+zip_with_files= "https://github.com/DSCI-310-2024/DSCI310-Group14/raw/testing1/tests/dummydata.zip"
 
-invalid_url="https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/functions/emptyfil"
+invalid_url="https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/tests/emptyfil"
 
-no_zip_url= "https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/functions/test1.csv"
+no_zip_url= "https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/tests/test1.csv"
 
 #will test if function works as it is meant to
 

@@ -19,19 +19,19 @@ def reading_datain(url, data_file, data_path, file_name):
     data_url= urlopen(url)
     file = ZipFile(BytesIO(data_url.read()))
     loa=file.namelist()
-    for f in loa: 
-        if f == data_file:  
-            data_csv = file.open(data_file)
-            data = pd.read_csv(data_csv)
-            os.makedirs(data_path, exist_ok=True)  
+    if data_file not in loa: 
+        raise ValueError("The specified file is not present within the inputed ZIP file")
+
+    data_csv = file.open(data_file)
+    data = pd.read_csv(data_csv)
+    os.makedirs(data_path, exist_ok=True)  
         
-            path = pathlib.Path(data_path+"/"+file_name)
-            if os.path.exists(path):
-                raise ValueError("The filename already exists.")
-            else: 
-                return data.to_csv(data_path+"/"+file_name)  
-        else: 
-            raise ValueError("The specified file is not present within the inputed ZIP file")
+    path = pathlib.Path(data_path+"/"+file_name)
+    if os.path.exists(path):
+        raise ValueError("The filename already exists.")
+    else: 
+        return data.to_csv(data_path+"/"+file_name)  
+       
 
 if __name__ == '__main__':
     reading_datain()
