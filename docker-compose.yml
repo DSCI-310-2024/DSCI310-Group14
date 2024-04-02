@@ -1,9 +1,8 @@
 services: 
   final-analysis-env:
-    image: cadenmchan/dsci310-project:latest
+    image: nehamenon/testingcont
     ports:
       - "8888:8888"
     volumes:
       - .:/home/jovyan
-    platform:
-      - linux/amd64
+    platform: linux/amd64
