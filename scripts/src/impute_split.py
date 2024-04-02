@@ -22,6 +22,3 @@ def impute_split(data, impute_val, train_size, rand_seed=0):
     data = data.fillna(impute_val)
     train, test = train_test_split(data, train_size = train_size)
     return train, test
-
-if __name__ == '__main__':
-    main()

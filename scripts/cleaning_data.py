@@ -5,9 +5,10 @@ import os
 from zipfile import ZipFile
 from urllib.request import urlopen
 from sklearn.model_selection import train_test_split
-import numpy
-from src.impute_split import impute_split
-
+import numpy as np
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from scripts.src.impute_split import impute_split
 
 @click.command()
 @click.option('--dataread', help='path to directory where data is located')
@@ -17,7 +18,7 @@ from src.impute_split import impute_split
 @click.option('--seed', default= 123,help='To ensure consistent values, what seed to set the analysis to')
 
 def main(dataread,dataout,datafile1, datafile2, seed):
-    numpy.random.seed(seed)
+    np.random.seed(seed)
     data1 = pd.read_csv(dataread)
     data1=data1.pivot_table(index= 'Country Name', values="2015", columns='Indicator Name')
     data1= data1[['Access to electricity (% of population)', 'Adjusted net national income (constant 2015 US$)', 
