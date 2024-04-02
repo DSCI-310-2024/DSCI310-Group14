@@ -10,7 +10,7 @@ import os
 import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from scripts.src.linear_regression import split_xy_columns
+from scripts.linear_regression import split_xy_columns
 
 data = {
         'Feature1': [1, 2, 3],
