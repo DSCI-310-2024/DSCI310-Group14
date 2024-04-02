@@ -17,7 +17,7 @@ from scripts.src.impute_split import impute_split
 @click.option('--datafile2', help='Name of file to save training set to')
 @click.option('--seed', default= 123,help='To ensure consistent values, what seed to set the analysis to')
 
-def main(dataread,dataout,datafile1, datafile2, seed):
+def clean_data(dataread,dataout,datafile1, datafile2, seed):
     np.random.seed(seed)
     data1 = pd.read_csv(dataread)
     data1=data1.pivot_table(index= 'Country Name', values="2015", columns='Indicator Name')
@@ -32,4 +32,4 @@ def main(dataread,dataout,datafile1, datafile2, seed):
     energy_train.to_csv(dataout+ "/"+datafile2)
 
 if __name__ == '__main__':
-    main()
+    clean_data()
