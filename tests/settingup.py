@@ -7,7 +7,7 @@ data_for_df= {'Country':['Canada', 'US', 'Jamaica'],
         'Number':[20, 21, 19]}
 data= pd.DataFrame(data_for_df)
 
-#make a directory with file called WDIData.csv
+#make a directory with file called WDICSV.csv
 file1= open("test1.csv", "w")
 file1.write("this is a test file")
 

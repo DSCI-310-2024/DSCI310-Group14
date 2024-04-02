@@ -9,7 +9,7 @@ import pytest
 
 # Create temporary directories and files
 
-dataread = "data/WDIData.csv"
+dataread = "data/WDICSV.csv"
 dataout = "tests/temp"
 datafile1 = "test_energy_test.csv"
 datafile2 = "test_energy_train.csv"
