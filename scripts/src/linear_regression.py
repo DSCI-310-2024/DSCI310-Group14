@@ -1,5 +1,3 @@
-import click
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -19,10 +17,10 @@ def split_xy_columns(dataset):
 
     return dataset_x, dataset_y
 
-@click.command()
-@click.option('--training_data_path', help='path of training set data (csv) to read', type=str)
-@click.option('--test_data_path', help='path of test set data (csv) to read', type=str)
-@click.option('--output_path', help='folder path to save the results, need to end with.png', type=str)
+#@click.command()
+#@click.option('--training_data_path', help='path of training set data (csv) to read', type=str)
+#@click.option('--test_data_path', help='path of test set data (csv) to read', type=str)
+#@click.option('--output_path', help='folder path to save the results, need to end with.png', type=str)
 
 def plot_rmse(training_data_path, test_data_path, output_path):
     #read clean train and test dataset
@@ -52,5 +50,5 @@ def plot_rmse(training_data_path, test_data_path, output_path):
     plt.savefig(output_path)
     return energy_RMSE, fig
 
-if __name__ == '__main__':
-    plot_rmse()
+#if __name__ == '__main__':
+#    plot_rmse()
