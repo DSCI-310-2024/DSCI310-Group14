@@ -10,7 +10,7 @@ As a complex issue, climate change doesn't have a singular cause, though the imp
 # Report
 The final report can be found in the repositor after the analysis is run. 
 
-# Usage 
+# Usage (Docker)
 
 To set up the environment to reproduce the study results, build and run the container using either `Dockerfile` or the DockerHub image. All required packages and versions are specified in container image. 
 
@@ -38,6 +38,14 @@ docker-compose run --rm final-analysis-env make all
 ```
 
 This should automatically read and tidy the data, perform analysis, and generate two reports, `renewable_energy_report.html` and `renewable_energy_report.pdf`, both of which can be found within the `reports` folder of the main directory.
+
+# Tests
+
+To run the tests, go to the root of the project directory and enter 
+```
+pytest tests/
+
+```
 
 # License
 
