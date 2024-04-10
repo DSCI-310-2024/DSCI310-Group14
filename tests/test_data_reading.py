@@ -3,7 +3,7 @@ import sys
 import pathlib
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from src.functionread import reading_datain
+from scripts.src.function_read import reading_datain
 import pytest
 
 
