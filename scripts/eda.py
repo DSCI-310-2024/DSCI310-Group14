@@ -34,22 +34,6 @@ def main(data_path, output_path):
     plt.savefig(output_path)
     print('EDA figure saved')
 
-    # data1 = pd.read_csv(data_path)
-    # fig, axes = plt.subplots(nrows=2, ncols=4,figsize=(32, 17))
-    # toprow= ['Access to electricity (% of population)', 'CO2 emissions (kt)', 'Population, total', 'Renewable energy consumption (% of total final energy consumption)']
-    # bottomrow= ['Land area (sq. km)', 'Death rate, crude (per 1,000 people)', 'PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)', 'Adjusted net national income (constant 2015 US$)']
-    # c=-1
-    # for i in range(len(toprow)): 
-    #     data1.plot.scatter(x=toprow[i], y='Renewable electricity output (% of total electricity output)', ax=axes[0,c+1])
-    #     c=c+1
-    # c=-1
-    # for i in range(len(bottomrow)): 
-    #     data1.plot.scatter(x=bottomrow[i], y='Renewable electricity output (% of total electricity output)', ax=axes[1,c+1])
-    #     c=c+1
-    # plt.subplots_adjust(wspace=0.2, hspace=0.15)
-    # plt.savefig(output_path)
-    # return print('EDA figure saved')
-
 def create_scatter_plots(data, x_columns, y_column, nrows, ncols, figsize=(32, 17)):
     """
     Create scatter plots for given columns against a common y-column.
