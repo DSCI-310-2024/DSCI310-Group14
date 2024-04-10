@@ -56,7 +56,11 @@ def create_scatter_plots(data, x_columns, y_column, nrows, ncols, figsize=(32, 1
     axes = axes.flatten()  # Flatten in case of single row/column to simplify indexing
     for i, x_col in enumerate(x_columns[:nrows*ncols]):  # Ensure we do not exceed subplot count
         if x_col in data and y_column in data:
+            ax = axes[i]
             data.plot.scatter(x=x_col, y=y_column, ax=axes[i])
+            ax.set_ylabel("Renewable electricity output \n (% of total electricity output)", fontsize=16)  # Change Y label and font size
+            x = ax.get_xlabel()
+            ax.set_xlabel(x, fontsize=16)
         else:
             raise ValueError(f"Column {x_col} or {y_column} does not exist in DataFrame")
     plt.subplots_adjust(wspace=0.2, hspace=0.15)
