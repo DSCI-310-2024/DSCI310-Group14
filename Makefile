@@ -4,8 +4,8 @@ all: results/figures/EDA.png \
 		reports/renewable_energy_report.pdf \
 
 #download data from the URL
-data/raw/downloaded.csv: scripts/readingdata.py
-	python scripts/readingdata.py \
+data/raw/downloaded.csv: scripts/reading_data.py
+	python scripts/reading_data.py \
 	--url="https://databank.worldbank.org/data/download/WDI_CSV.zip" \
 	--data_file="WDICSV.csv" \
 	--data_path=data/raw \
