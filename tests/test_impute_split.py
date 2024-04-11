@@ -4,7 +4,7 @@ import os
 import pathlib
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from scripts.src.impute_split import impute_split
+from src.impute_split import impute_split
 import pytest
 
 # Create a sample dataset

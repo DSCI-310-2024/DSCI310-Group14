@@ -8,7 +8,34 @@ from urllib.request import urlopen
 import pathlib
 
 def reading_datain(url, data_file, data_path, file_name):
-    """Simple program that reads in the data from a URL, and selects a file from the .zip."""
+    """
+    Read a specified data file in from a URL containing a zip file.
+
+    Parameters
+    ----------
+    url : str
+        URL of link containing zip file. 
+    
+    data_file: str
+        Specified file in .ZIP that data is to be extracted from. 
+    
+    data_path: str
+        Directory to which the imported data should be saved to. 
+    
+    file_name: str
+        Name of file that imported data will be saved to. 
+    
+
+    Returns
+    -------
+    file_name.csv
+        CSV file that data is saved to. 
+
+    Examples
+    --------
+    >>> reading_datain("url", "WDICSV.csv", "data/raw", "downloaded_data.csv" )
+    
+    """
     request= requests.get(url)
 
     if request.status_code !=200:
@@ -28,7 +55,8 @@ def reading_datain(url, data_file, data_path, file_name):
         
     path = pathlib.Path(data_path+"/"+file_name)
     if os.path.exists(path):
-        raise ValueError("The filename already exists.")
+        # raise ValueError("The filename already exists.")
+        return data.to_csv(data_path+"/"+file_name)
     else: 
         return data.to_csv(data_path+"/"+file_name)  
        

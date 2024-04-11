@@ -14,7 +14,7 @@ The final report can be found in the repositor after the analysis is run.
 
 To set up the environment to reproduce the study results, build and run the container using either `Dockerfile` or the DockerHub image. All required packages and versions are specified in container image. 
 
-First, ensure docker has been installed and is running
+First, ensure Docker has been installed and is running. This step must be done for the analysis to run, and the following commands to succesfully execute. 
 
 Then, clone the repository by putting the following command into your terminal: 
 ```
@@ -46,6 +46,21 @@ To run the tests, go to the root of the project directory and enter
 pytest tests/
 
 ```
+# Project Dependencies: 
+This project requires certain packages to be installed in order for the analysis to execute and the correct visualizations to be generated, and for the final report to be built. All dependencies are solved when the container is used. 
+
+- `matplotlib`
+- `numpy`
+- `pandas`
+- `scikit-learn`
+- `seaborn`
+- `click`
+- `quarto`
+- `tabulate`
+-  `altair`
+- `renewenergy`
+- Jupyter Lab
+
 
 # License
 
