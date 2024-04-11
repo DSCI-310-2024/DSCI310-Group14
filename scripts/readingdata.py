@@ -9,7 +9,7 @@ import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-from scripts.src.functionread import reading_datain
+from src.functionread import reading_datain
 
 @click.command()
 @click.option('--url',help='URL of file you want to read in', type=str)
@@ -23,15 +23,3 @@ def reading_data(url, data_file, data_path, file_name):
 
 if __name__ == '__main__':
     reading_data()
-
-# def reading_data(url, data_file, data_path, file_name):
-#     """Simple program that reads in the data from a URL, and selects a file from the .zip."""
-#     data_url= urlopen(url)
-#     file = ZipFile(BytesIO(data_url.read()))
-#     data_csv = file.open(data_file)
-#     data = pd.read_csv(data_csv)
-#     os.makedirs(data_path, exist_ok=True)  
-#     return data.to_csv(data_path+"/"+file_name)  
-
-# if __name__ == '__main__':
-#     reading_data()

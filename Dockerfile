@@ -18,4 +18,3 @@ RUN conda install conda-forge::altair=5.2.0 -y
 RUN apt-get update 
 RUN apt-get install fonts-lmodern -y 
 RUN apt-get install lmodern -y 
-

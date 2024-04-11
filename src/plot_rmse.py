@@ -7,22 +7,32 @@ from sklearn.metrics import mean_squared_error
 from sklearn import set_config
 from sklearn.metrics import mean_squared_error
 
-
-def split_xy_columns(dataset):
-    #splitting the x and y columns of the data
-    dataset_x = dataset
-    dataset_x = dataset_x.drop('Renewable electricity output (% of total electricity output)', axis=1)
-    dataset_x = dataset_x.drop('Country Name', axis=1)
-    dataset_y = dataset[["Renewable electricity output (% of total electricity output)"]]
-
-    return dataset_x, dataset_y
-
-#@click.command()
-#@click.option('--training_data_path', help='path of training set data (csv) to read', type=str)
-#@click.option('--test_data_path', help='path of test set data (csv) to read', type=str)
-#@click.option('--output_path', help='folder path to save the results, need to end with.png', type=str)
-
 def plot_rmse(training_data_path, test_data_path, output_path):
+    """
+    Perform linear regression and plot the results on a graph containing Expected vs Predicted. 
+
+    Parameters
+    ----------
+    training_data_path: str
+        Path to training data .csv file
+    
+    test_data_path: str
+        Path to test data .csv file
+    
+    output_path: str
+        Directory to which the figure should be saved to. 
+    
+    
+    Returns
+    -------
+    results.png
+        Figure containing the Predicted vs Expected Values of the linear regression.
+
+    Examples
+    --------
+    >>> plot_rmse("data/energy_train.csv", "data/energy_test.csv", "results/" )
+    
+    """
     #read clean train and test dataset
 
     energy_train = pd.read_csv(training_data_path)
