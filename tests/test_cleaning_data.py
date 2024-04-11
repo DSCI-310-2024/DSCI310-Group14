@@ -4,7 +4,7 @@ import os
 import pathlib
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from scripts.src.clean_data import clean_data
+from src.clean_data import clean_data
 import pytest
 
 # Create temporary directories and files
