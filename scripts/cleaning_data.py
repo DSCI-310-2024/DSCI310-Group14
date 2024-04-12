@@ -7,9 +7,9 @@ from urllib.request import urlopen
 from sklearn.model_selection import train_test_split
 import numpy as np
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from src.impute_split import impute_split
-from src.clean_data import clean_data
+# sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+# from src.clean_data import clean_data
+from renewenergy.clean_data import clean_data
 
 @click.command()
 @click.option('--dataread', help='path to directory where data is located')

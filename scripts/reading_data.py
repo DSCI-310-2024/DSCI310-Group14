@@ -7,9 +7,9 @@ from zipfile import ZipFile
 from urllib.request import urlopen
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+# sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from renewenergy.reading_data import reading_data
 
-from src.function_read import reading_datain
 
 @click.command()
 @click.option('--url',help='URL of file you want to read in', type=str)
