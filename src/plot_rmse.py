@@ -6,6 +6,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn import set_config
 from sklearn.metrics import mean_squared_error
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from src.split_xy_columns import split_xy_columns
 
 
