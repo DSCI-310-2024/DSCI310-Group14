@@ -37,3 +37,6 @@ def main(data_path, output_path):
     #save the fig
     plt.savefig(output_path)
     print('EDA figure saved')
+
+if __name__ == '__main__':
+    main()
