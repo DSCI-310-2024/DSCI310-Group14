@@ -19,7 +19,7 @@ from renewenergy.reading_data import reading_data
 
 def reading_data(url, data_file, data_path, file_name):
     """Simple program that reads in the data from a URL, and selects a file from the .zip."""
-    reading_datain(url, data_file, data_path, file_name)
+    reading_data(url, data_file, data_path, file_name)
 
 if __name__ == '__main__':
     reading_data()
