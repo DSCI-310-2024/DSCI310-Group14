@@ -7,19 +7,19 @@ from src.function_read import reading_datain
 import pytest
 
 # Dummy data for tests to work with
-empty_zip="https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/tests/emptyfile.zip"
+empty_zip="https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/tests/test_data/emptyfile.zip"
 
-zip_with_files= "https://github.com/DSCI-310-2024/DSCI310-Group14/raw/testing1/tests/dummydata.zip"
+zip_with_files= "https://github.com/DSCI-310-2024/DSCI310-Group14/raw/testing1/tests/test_data/dummydata.zip"
 
-invalid_url="https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/tests/emptyfil"
+invalid_url="https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/tests/test_data/emptyfil"
 
-no_zip_url= "https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/tests/test1.csv"
+no_zip_url= "https://github.com/DSCI-310-2024/DSCI310-Group14/blob/testing1/tests/test_data/test1.csv"
 
 
 # This tests if when the data is downloaded, the path to the datafile exists and is valid
 def test_path_exists():
     # url= 'https://databank.worldbank.org/data/download/WDI_CSV.zip'
-    trial1=reading_datain(zip_with_files,"targ.csv", "data/raw","downloaded.csv")
+    trial1=reading_datain(zip_with_files,"test_data/targ.csv", "data/raw","downloaded.csv")
     path = pathlib.Path("data/raw/downloaded.csv")
     assert os.path.exists(path)
 
