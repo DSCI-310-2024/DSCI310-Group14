@@ -8,17 +8,17 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn import set_config
 from sklearn.metrics import mean_squared_error
-from renewenergy.split_xy_columns import split_xy_columns
+# from renewenergy.split_xy_columns import split_xy_columns
 
 
-# def split_xy_columns(dataset):
-#     #splitting the x and y columns of the data
-#     dataset_x = dataset
-#     dataset_x = dataset_x.drop('Renewable electricity output (% of total electricity output)', axis=1)
-#     dataset_x = dataset_x.drop('Country Name', axis=1)
-#     dataset_y = dataset[["Renewable electricity output (% of total electricity output)"]]
+def split_xy_columns(dataset):
+    #splitting the x and y columns of the data
+    dataset_x = dataset
+    dataset_x = dataset_x.drop('Renewable electricity output (% of total electricity output)', axis=1)
+    dataset_x = dataset_x.drop('Country Name', axis=1)
+    dataset_y = dataset[["Renewable electricity output (% of total electricity output)"]]
 
-#     return dataset_x, dataset_y
+    return dataset_x, dataset_y
 
 @click.command()
 @click.option('--training_data_path', help='path of training set data (csv) to read', type=str)

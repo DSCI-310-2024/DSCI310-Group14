@@ -7,8 +7,9 @@ from zipfile import ZipFile
 from urllib.request import urlopen
 import os
 import sys
-# sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from renewenergy.reading_data import reading_data
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from src.function_read import reading_datain
+# from renewenergy.reading_data import reading_data
 
 
 @click.command()
@@ -19,7 +20,7 @@ from renewenergy.reading_data import reading_data
 
 def reading_data(url, data_file, data_path, file_name):
     """Simple program that reads in the data from a URL, and selects a file from the .zip."""
-    reading_data(url, data_file, data_path, file_name)
+    reading_datain(url, data_file, data_path, file_name)
 
 if __name__ == '__main__':
     reading_data()

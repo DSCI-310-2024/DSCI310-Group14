@@ -6,8 +6,8 @@ import pandas as pd
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-# from src.create_scatter_plots import create_scatter_plots
-from renewenergy.create_scatter_plots import create_scatter_plots
+from src.create_scatter_plots import create_scatter_plots
+# from renewenergy.create_scatter_plots import create_scatter_plots
 """
 Following after the cleaning_data.py, 
 perform an exploritary Exploratory Data Analysis (EDA) on the training set exported from the cleaning_data.py
