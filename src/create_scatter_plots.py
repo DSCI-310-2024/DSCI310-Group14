@@ -17,6 +17,14 @@ def create_scatter_plots(data, x_columns, y_column, nrows, ncols, figsize=(32, 1
 
     Returns:
     - matplotlib.figure.Figure: The created figure.
+
+    Example Usage:
+    # Example 1: Plotting two columns against a common y-column in a 2x1 grid
+    create_scatter_plots(data, ['Column1', 'Column2'], 'CommonYColumn', nrows=2, ncols=1)
+
+    # Example 2: Plotting three columns against a common y-column in a 1x3 grid with custom figure size
+    create_scatter_plots(data, ['Column1', 'Column2', 'Column3'], 'CommonYColumn', nrows=1, ncols=3, figsize=(20, 10))
+
     """
     if data.empty or not set(x_columns + [y_column]).issubset(data.columns) or data[x_columns + [y_column]].dropna().empty:
         raise ValueError("DataFrame is empty or specified columns contain no data")
