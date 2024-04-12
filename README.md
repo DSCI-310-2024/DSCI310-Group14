@@ -14,7 +14,7 @@ The final report can be found at `reports/renewable_energy_report.html` after th
 
 To set up the environment to reproduce the study results, build and run the container using either `Dockerfile` or the DockerHub image. All required packages and versions are specified in container image. 
 
-First, ensure Docker has been installed and is running. This step must be done for the analysis to run, and the following commands to succesfully execute. 
+First, ensure Docker has been installed and is running. **Docker must be running throughout the duration of this setup!** This step must be completed to setup an environment to ensure analysis is run properly and successfully.
 
 Then, clone the repository by putting the following command into your terminal: 
 ```
