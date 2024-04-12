@@ -9,7 +9,8 @@ scikit-learn=1.4.1.post1 \
 seaborn=0.13.2 \
 click=8.1.7 \
 quarto=1.4.550  \
-tabulate=0.9.0 
+tabulate=0.9.0 \
+nbclient=0.10.0
 
 RUN pip install renewenergy==0.1.0
 
