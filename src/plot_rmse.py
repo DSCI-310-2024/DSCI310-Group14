@@ -6,10 +6,12 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn import set_config
 from sklearn.metrics import mean_squared_error
+from src.split_xy_columns import split_xy_columns
+
 
 def plot_rmse(training_data_path, test_data_path, output_path):
     """
-    Perform linear regression and plot the results on a graph containing Expected vs Predicted. 
+    Perform linear regression and plot the results on a graph containing Expected vs Predicted observations 
 
     Parameters
     ----------
@@ -25,7 +27,7 @@ def plot_rmse(training_data_path, test_data_path, output_path):
     
     Returns
     -------
-    results.png
+    results.png:
         Figure containing the Predicted vs Expected Values of the linear regression.
 
     Examples

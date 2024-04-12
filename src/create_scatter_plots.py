@@ -10,21 +10,27 @@ def create_scatter_plots(data, x_columns, y_column, nrows, ncols, figsize=(32, 1
     Parameters
     ----------
     data: DataFrame
-        The data to plot.
+        The data to plot
+
     x_columns: list
-        A list of column names for the x-axis.
+        A list of column names for the x-axis
+
     y_column: str
-        The column name for the y-axis.
+        The column name for the y-axis
+
     nrows: int
-        Number of rows in the subplot grid.
+        Number of rows in the subplot grid
+
     ncols: int
-        Number of columns in the subplot grid.
+        Number of columns in the subplot grid
+        
     figsize: tuple
-        Figure size.
+        Figure size
 
     Returns
     -------
-    - matplotlib.figure.Figure: The created figure.
+    matplotlib.figure.Figure: 
+        The created figure.
 
     Examples
     --------
