@@ -8,13 +8,13 @@ Data Source Link (From World Bank): https://datacatalog.worldbank.org/search/dat
 As a complex issue, climate change doesn't have a singular cause, though the impacts of burning fossil fuels is a large source of greenhouse gases, and has caused detrimental effects. Our analysis here attempts to explore **if a subset of renewable energy related World Development Indicators** along with a simple **linear regression model** can be used to **predict renewable electricity outputs** of countries throughout the world. Our analysis created a model with an Root Mean Squared Error (RMSE) score of 23.74. Our model was able to predict most cases accurately though there are some predictions with low accuracy, not close to the actual values. Our model did predict some countries to have a negative renewable electricity output which demonstrates the need for a more complex analysis to be conducted, using advanced machine learning methods. By creating an advanced machine learning model, the capabilities of countries to produce more renewable electricity based on their other World Development Indicators can be calculated and used to influence country specific and global goals and targets.
 
 # Report
-The final report can be found in the repositor after the analysis is run. 
+The final report can be found at `reports/renewable_energy_report.html` after the following steps are completed to run analysis and generate the report. 
 
 # Usage (Docker)
 
 To set up the environment to reproduce the study results, build and run the container using either `Dockerfile` or the DockerHub image. All required packages and versions are specified in container image. 
 
-First, ensure Docker has been installed and is running. This step must be done for the analysis to run, and the following commands to succesfully execute. 
+First, ensure Docker has been installed and is running. **Docker must be running throughout the duration of this setup!** This step must be completed to setup an environment to ensure analysis is run properly and successfully.
 
 Then, clone the repository by putting the following command into your terminal: 
 ```

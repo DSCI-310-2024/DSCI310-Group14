@@ -44,7 +44,8 @@ def clean_data(dataread,dataout,datafile1, datafile2, seed):
 
     Examples
     --------
-    >>> plot_rmse("data/energy_train.csv", "data/energy_test.csv", "results/" )
+    Read data in 'downloaded.csv' and create a folder 'cleaned/' with train and test csv files.
+    >>> plot_rmse("downloaded.csv" "cleaned" "energy_train.csv", "energy_test.csv")
     
   """
     np.random.seed(seed)
