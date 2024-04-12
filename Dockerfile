@@ -12,7 +12,7 @@ quarto=1.4.550  \
 tabulate=0.9.0 \
 nbclient=0.10.0
 
-RUN pip install renewenergy==0.1.0
+RUN pip install renewenergy==0.1.2
 
 RUN conda install conda-forge::altair=5.2.0 -y
 
